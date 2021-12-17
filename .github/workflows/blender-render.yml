@@ -24,4 +24,4 @@ jobs:
     # Render the animation
     - name: Render the animation
       run: |
-        blender -b welcome.blend -a
+        blender -b welcome.blend -E CYCLES -a
