@@ -1,0 +1,28 @@
+name: blender-render
+
+# Only run this when the master branch changes
+on:
+  push:
+    branches:
+    - master
+
+# This job installs dependencies and render the animation
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: |
+		apt-get install blender
+    # Render the animation
+    - name: Render the animation
+      run: |
+        blender -b welcome.blend -a
