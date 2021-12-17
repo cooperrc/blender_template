@@ -20,8 +20,7 @@ jobs:
         python-version: 3.9
 
     - name: Install dependencies
-      run: |
-		apt-get install blender
+      run: apt-get install blender
     # Render the animation
     - name: Render the animation
       run: |
