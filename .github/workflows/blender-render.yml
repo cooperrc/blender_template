@@ -8,7 +8,7 @@ on:
 
 # This job installs dependencies and render the animation
 jobs:
-  deploy-book:
+  blender-render:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
         python-version: 3.9
 
     - name: Install dependencies
-      run: apt-get install blender
+      run: sudo apt-get install blender
     # Render the animation
     - name: Render the animation
       run: |
